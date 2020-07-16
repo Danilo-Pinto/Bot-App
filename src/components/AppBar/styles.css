@@ -1,0 +1,4 @@
+.AppBar{
+    grid-area: AB;
+    background-color: var(--main-color);
+}
