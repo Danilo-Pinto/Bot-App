@@ -1,4 +1,7 @@
 .Home{
-    background-color: brown;
     grid-area: PG;
+    display: grid;
+    grid-template-areas: "BC OR";
+    grid-template-columns: 300px auto;
+    overflow: hidden;
 }

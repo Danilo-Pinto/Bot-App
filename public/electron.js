@@ -2,7 +2,9 @@ const {app,BrowserWindow,globalShortcut} = require('electron');
 
 const path = require('path');
 const isDev = require('electron-is-dev');
+
 const ButtonsController = require('./controllers/ButtonsController');
+const Events = require('./controllers/Events');
 
 let mainWindow;
 
@@ -25,7 +27,8 @@ function createWindow() {
   })
 
   ButtonsController(mainWindow);
-
+  Events(mainWindow);
+  
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
