@@ -1,4 +1,14 @@
 .OrdemControll{
     grid-area:OR;
-    background-color: var(--madle-color);
+    background-color: var(--last-color);
+    overflow: scroll;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+ul{
+    list-style-type: none;
+}
+.not-data{
+    margin-top: 20px;
 }

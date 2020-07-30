@@ -18,7 +18,7 @@ export default (setIcon,setText,setEnable) =>{
         setText('Stop Bot')
     });
 
-    ipcRenderer.on('auth_failure',(event,data) =>{
+    ipcRenderer.once('auth_failure',(event,data) =>{
         if(msg){
             alert('Algo deu errado tente novamente');
             setEnable(false);

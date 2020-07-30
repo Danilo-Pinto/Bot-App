@@ -1,0 +1,37 @@
+.information{
+    border-radius: 5px;
+    padding: 2.5px;
+    margin: 5px;
+    background-color: var(--ordem-color)
+}
+h3{
+    text-align: center;
+}
+.conteiner{
+    display:grid;
+    grid-template-areas: "INFO IOR";
+    grid-template-columns: auto;
+}
+.info{
+    margin-left: 10px;
+    grid-area:INFO;
+}
+.ordem{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between ;
+    grid-area: IOR;
+}
+.ordem button{
+    background-color: var(--madle-color);
+}
+.ready{
+    background-color: #1fb482;
+}
+.btn-right{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-right button{
+    margin: 0;
+}
