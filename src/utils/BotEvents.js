@@ -5,7 +5,7 @@ const {ipcRenderer} = window.require('electron');
 
 let msg = true
 
-export default (setIcon,setText,setEnable) =>{
+export default (setIcon,setText,setEnable,cont,setCont,setconfirm,confirm) =>{
     
     ipcRenderer.on('qr-ready',(event,data) =>{
         setText('Escanei');
@@ -32,5 +32,16 @@ export default (setIcon,setText,setEnable) =>{
         setText('Start Bot');
         setEnable(false);
     })
+    
+    ipcRenderer.once('data-send',(event,data) =>{
+        let next = cont+1
+        let confir = confirm+1
+        setconfirm(confir)
+        setCont(next)
+    })
 
+    ipcRenderer.once('confirm-data',(event,data) =>{
+        let next = confirm-1
+        setconfirm(next);
+    })
 }

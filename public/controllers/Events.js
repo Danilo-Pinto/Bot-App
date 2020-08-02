@@ -1,6 +1,6 @@
 const {ipcMain} = require('electron');
 const qr = require('qrcode');
-const {Client} = require('whatsapp-web.js');
+const {Client,/* path */ } = require('whatsapp-web.js');
 const fs = require('fs');
 const StartBot = require('../Bot/index');
 
@@ -11,14 +11,14 @@ module.exports = (mainWindow) =>{
         let DataSession;
 
         if(fs.existsSync(SESSION_FILE)){
-            DataSession = require(`../../${SESSION_FILE}`)
+            DataSession = JSON.parse(fs.readFileSync(SESSION_FILE));
         }
 
         const client = new Client({
             session:DataSession,
             authTimeoutMs: 5000,
             puppeteer:{
-                headless:true
+                /* executablePath:path() */
             }
         });
 

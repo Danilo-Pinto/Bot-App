@@ -16,7 +16,7 @@
     padding: 2px;
     width: 181px;
     height: 181px;
-    background-color: #f0f0f5;
+    background-color: var(--border-color);
 }
 .cont{
     display: flex;

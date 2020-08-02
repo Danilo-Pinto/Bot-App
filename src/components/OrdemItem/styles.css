@@ -26,7 +26,7 @@ h3{
     background-color: var(--madle-color);
 }
 .ready{
-    background-color: #1fb482;
+    background-color: var(--confirm-color);
 }
 .btn-right{
     display: flex;
