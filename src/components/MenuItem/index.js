@@ -80,6 +80,14 @@ function MenuItem() {
     let rest = rows.filter(
       e => e.id !== rows[index].id
     );
+    rest.map(
+      (e,i)=>{
+        if(e){
+          e.id = i+1
+        }
+        return false
+      }
+    )
 
     fs.writeFileSync('menu.json',JSON.stringify(rest,null,2));
     setRows(JSON.parse(fs.readFileSync('menu.json')));
