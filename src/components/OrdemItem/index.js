@@ -81,7 +81,7 @@ function OrdemItem({itens,index}) {
               ))
             }
           </ul>
-          <strong>Total : R${itens.info.total}</strong>
+          <strong>Total:{Intl.NumberFormat('pt-BR',{style:'currency', currency:'BRL',}).format(itens.info.total)}</strong>
           </div>
           <div className="btn-right">
             <i/>

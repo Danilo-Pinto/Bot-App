@@ -18,6 +18,10 @@
     height: 181px;
     background-color: var(--border-color);
 }
+.QrBorde img{
+    -webkit-user-drag: none;
+    user-select: none;
+}
 .cont{
     display: flex;
     height: 20px;

@@ -1,23 +1,14 @@
-const menu = [
-    {
-        id:1,
-        title: "X-Burguer",
-        price: 10.9,
-        description:'Pão, Carne e Bacon'
-    },
-    {
-        id:2,
-        title: "X-Frango",
-        price: 12.9,
-        description:'Pão, Carne e Bacon'
-    },
-    {
-        id:3,
-        title: "X-Tudo",
-        price: 17.9,
-        description:'Pão, Carne e Bacon'
-    }
-]
+const fs = require('fs');
+const {ipcMain} = require('electron');
+
+require('../../../utils/readFile')('menu.json');
+
+let menu = JSON.parse(fs.readFileSync('menu.json'));
+
+ipcMain.on('NewItem',(event,data) =>{
+    menu = data;
+})
+
 module.exports = {
     getMenu(){
         let cardapio = '🍔 _Cardápio_ 🍔\n\n';
