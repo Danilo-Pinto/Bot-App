@@ -9,6 +9,8 @@
 /coverage
 /session.json
 /menu.json
+/adds.json
+/streat.json
 
 # production
 /build

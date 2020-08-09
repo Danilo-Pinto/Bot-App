@@ -14,14 +14,14 @@ module.exports = {
         let cardapio = '🍔 _Cardápio_ 🍔\n\n';
 
         menu.map(
-            e => cardapio += `*${e.id}* - *${e.title}* - R$${e.price}\n_${e.description}_\n\n`
+            (e,i) => cardapio += `*${i+1}* - *${e.title}* - R$${e.price}\n_${e.description}_\n\n`
         )
 
         return cardapio;
     },
     selectItem(id){
         return menu.find(
-            e => e.id == id
+            (e,i) => (i+1) == id
         )
     }
 }

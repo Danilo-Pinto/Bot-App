@@ -1,0 +1,50 @@
+.MenuAdds{
+    background-color: var(--last-color);
+    grid-area: MI;
+    overflow: scroll;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.MenuAdds header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.MenuAdds h3{
+    font-weight: 100;
+    font-size: large;
+}
+.MenuAdds button{
+    border-radius: 5px;
+}
+.MenuAdds li{
+    background-color: var(--ordem-color);
+    padding: 5px;
+    padding-left: 18px;
+    border-radius: 10px;
+}
+.MenuAdds p{
+    line-height: 21px;
+}
+.MenuAdds ul{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+.AddsHeader{
+    text-align: center;
+    font-size: 16px;
+}
+.Buttons{
+    width: 25px;
+    height: 25px;
+    float: right;
+}
+.MenuAdds img{
+    width: 25px;
+    height: 25px;
+    float: right;
+}

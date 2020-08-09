@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import './styles.css';
 
 import MenuItem from '../../components/MenuItem';
+import MenuAdds from '../../components/MenuAdds';
 
 function Menu() {
 
@@ -18,11 +19,11 @@ function Menu() {
       case 'menu':
         return <MenuItem/>
       case 'add':
-        return <div style={{gridArea:'MI',backgroundColor:'blue'}}/>  
+        return <MenuAdds/>  
       case 'street':
         return <div style={{gridArea:'MI',backgroundColor:'black'}}/>
       default:
-        return <MenuItem/>
+        return <MenuAdds/>
     }
   }
 

@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 
 import Trash from '../../assets/trash.svg';
 import Edit from '../../assets/edit.svg';
-import styleModal from './styles';
+import styleModal from '../../ModalStyle';
 import './styles.css';
 
 Modal.setAppElement('#root')
@@ -33,11 +33,7 @@ function MenuItem() {
     setTitle('')
     setPrice('')
     setDescription('')
-    if(dialog){
-      setModal(true)
-    }else{
-      setModal(false)
-    }
+    setModal(dialog)
   }
 
   function handleNewItem(e){
@@ -102,7 +98,7 @@ function MenuItem() {
         <button onClick={() =>setModal(true)}>Cadastrar</button>
       </header>
       
-      <Modal isOpen={modal} style={styleModal}>
+      <Modal isOpen={modal} style={styleModal(400)}>
         <div className="Dialog">
           <h3>Cadastrar Lanche</h3>
           <form onSubmit={handleNewItem}>
