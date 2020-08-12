@@ -1,30 +1,13 @@
-const address = [
-    {
-        id: 1,
-        name:'Cidade Operaria',
-        content:'Unidade 1',
-        price: 1
-    },
-    {
-        id: 2,
-        name:'Condominio',
-        content:'Condomino São José',
-        price: 4
-    },
-    {
-        id: 3,
-        name:'Bairro',
-        content:'São Cristovão',
-        price: 3
-    },
-    {
-        id: 4,
-        name:'Cidade Operaria',
-        content:'Unidade 3',
-        price: 5
-    }
-]
+const fs = require('fs');
+const {ipcMain} = require('electron');
 
+require('../../../utils/readFile')('streat.json');
+
+let address = JSON.parse(fs.readFileSync('streat.json'));
+
+ipcMain.on('NewStreat',(event,data) =>{
+    address = data;
+})
 
 module.exports = {
     showAdrress(){
@@ -44,7 +27,20 @@ module.exports = {
         cont = true;
         locations +='\n'
 
-        address.filter(e => e.name != 'Cidade Operaria').map(
+        address.filter(e => e.name == 'Condomínios').map(
+            e =>{
+                if(cont){
+                    locations += `*${e.name}*\n`
+                    cont = false
+                }
+                locations += `${e.id} - ${e.content} - R$${e.price}\n`
+            }
+        )
+
+        cont = true;
+        locations +='\n'
+        
+        address.filter(e => e.name == 'Outros').map(
             e =>{
                 if(cont){
                     locations += `*Demais localidades*\n`

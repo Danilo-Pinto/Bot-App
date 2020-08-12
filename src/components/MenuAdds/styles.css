@@ -6,12 +6,6 @@
 ::-webkit-scrollbar{
     display: none;
 }
-.MenuAdds header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
 .MenuAdds h3{
     font-weight: 100;
     font-size: large;

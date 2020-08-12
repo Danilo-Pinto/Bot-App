@@ -4,6 +4,7 @@ import './styles.css';
 
 import MenuItem from '../../components/MenuItem';
 import MenuAdds from '../../components/MenuAdds';
+import MenuStreat from '../../components/MenuStreat';
 
 function Menu() {
 
@@ -21,9 +22,9 @@ function Menu() {
       case 'add':
         return <MenuAdds/>  
       case 'street':
-        return <div style={{gridArea:'MI',backgroundColor:'black'}}/>
+        return <MenuStreat/>
       default:
-        return <MenuAdds/>
+        return <MenuItem/>
     }
   }
 

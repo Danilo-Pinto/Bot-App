@@ -1,63 +1,58 @@
-.MenuItem{
-    background-color: var(--last-color);
+.MenuStreat{
     grid-area: MI;
+    background-color: var(--last-color);
     overflow: scroll;
 }
 ::-webkit-scrollbar{
     display: none;
 }
-.MenuItem h3{
+.MenuStreat h3{
     font-weight: 100;
     font-size: large;
 }
-.MenuItem button{
+.MenuStreat button{    
     border-radius: 5px;
 }
-.MenuItem ul{
+.Mult{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+.Mult input{
+    width: 15px;
+    height: 15px;
+    margin-right: -15px;
+}
+.MenuStreat ul{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
     padding: 10px;
 }
-.MenuItem p{
-    line-height: 21px;
-}
-.MenuItem li{
+.MenuStreat li{
     background-color: var(--ordem-color);
     padding: 5px;
     padding-left: 18px;
     border-radius: 10px;
 }
-.ItemHeader{
+.MenuStreat p{
+    line-height: 21px;
+}
+.StreatHeader{
     text-align: center;
     font-size: 16px;
 }
-.ItemHeader h4{
+.StreatHeader h4{
     font-weight: 100;
 }
+
 .Buttons{
     width: 25px;
     height: 25px;
     float: right;
 }
-.MenuItem img{
+.Streats img{
     width: 25px;
     height: 25px;
     float: right;
-}
-.Dialog h3{
-    font-size: large;
-    font-weight: 100;
-    margin-bottom: 10px;
-}
-.DialogButtons button{
-    margin: 5px;
-    border-radius: 5px;
-}
-.DialogButtons{
-    float: right;
-    margin-top: 10px;
-}
-.Dialog{
-    padding: 10px;
 }

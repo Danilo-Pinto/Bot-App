@@ -12,7 +12,12 @@ body{
     -webkit-user-select: none;
     user-select: none;
 }
-
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
 button{
     width: 100px;
     height: 25px;
