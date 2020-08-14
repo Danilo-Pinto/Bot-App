@@ -23,5 +23,9 @@ module.exports = {
         return increments.find(
             (e,i) => (i+1) == id
         )
+    },
+    validateAdds(){
+        if(increments.length == 0) return true
+        return false
     }
 }

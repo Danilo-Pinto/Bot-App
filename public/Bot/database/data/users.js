@@ -12,7 +12,8 @@ module.exports = {
                 stage:0,
                 yes: false,
                 money_cont:false,
-                cont:1
+                cont:1,
+                valAdds:false
             }
         }
 

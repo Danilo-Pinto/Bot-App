@@ -41,13 +41,14 @@ function MenuAdds() {
             price:parseFloat(price)
         }
         if(edit){
-            let EditData = rows[id]
-            EditData.title = title;
-            EditData.price = parseFloat(price);
-            
-            let rest = rows.filter(e => e.id !== EditData.id);
-      
-            fs.writeFileSync('adds.json',JSON.stringify([...rest,EditData],null,2));
+            let rest = rows.map(e =>{
+                if(e.id === rows[id].id){
+                  return {...data,id:e.id};
+                }else{
+                  return e;
+                }
+            });
+            fs.writeFileSync('adds.json',JSON.stringify([...rest],null,2));
       
         }else{
             fs.writeFileSync('adds.json',JSON.stringify([...rows,data],null,2));

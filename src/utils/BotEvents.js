@@ -5,7 +5,7 @@ const {ipcRenderer} = window.require('electron');
 
 let msg = true
 
-export default (setIcon,setText,setEnable,cont,setCont,setconfirm,confirm) =>{
+export default (setIcon,setText,setEnable,cont,setCont,setconfirm,confirm,setTitle,setOpen) =>{
     
     ipcRenderer.on('qr-ready',(event,data) =>{
         setText('Escanei');
@@ -20,9 +20,10 @@ export default (setIcon,setText,setEnable,cont,setCont,setconfirm,confirm) =>{
 
     ipcRenderer.once('auth_failure',(event,data) =>{
         if(msg){
-            alert('Algo deu errado tente novamente');
+            setTitle('Algo deu errado tente novamente');
             setEnable(false);
-            setText('Start Bot')
+            setText('Start Bot');
+            setOpen(true);
             msg = false;
         }
     })

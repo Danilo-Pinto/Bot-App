@@ -46,14 +46,14 @@ function MenuItem() {
       description,
     }
     if(edit){
-      let EditData = rows[id]
-      EditData.title = title;
-      EditData.price = parseFloat(price);
-      EditData.description = description;
-      
-      let rest = rows.filter(e => e.id !== EditData.id);
-
-      fs.writeFileSync('menu.json',JSON.stringify([...rest,EditData],null,2));
+      let rest = rows.map(e =>{
+        if(e.id === rows[id].id){
+          return {...data,id:e.id};
+        }else{
+          return e;
+        }
+    });
+    fs.writeFileSync('menu.json',JSON.stringify([...rest],null,2));
 
     }else{
       fs.writeFileSync('menu.json',JSON.stringify([...rows,data],null,2));
@@ -98,7 +98,7 @@ function MenuItem() {
         <button onClick={() =>setModal(true)}>Cadastrar</button>
       </header>
       
-      <Modal isOpen={modal} style={styleModal(400)}>
+      <Modal isOpen={modal} style={styleModal(400)} shouldCloseOnEsc={true}>
         <div className="Dialog">
           <h3>Cadastrar Lanche</h3>
           <form onSubmit={handleNewItem}>
