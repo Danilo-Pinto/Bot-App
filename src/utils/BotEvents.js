@@ -12,7 +12,7 @@ export default (setIcon,setText,setEnable,cont,setCont,setconfirm,confirm,setTit
         setIcon(data);
     });
     
-    ipcRenderer.on('client-ready',(event,data) =>{
+    ipcRenderer.once('client-ready',(event,data) =>{
         setEnable(false)
         setIcon(QrOk)
         setText('Stop Bot')
@@ -28,7 +28,7 @@ export default (setIcon,setText,setEnable,cont,setCont,setconfirm,confirm,setTit
         }
     })
 
-    ipcRenderer.on('stop',(event,data) =>{
+    ipcRenderer.once('stop',(event,data) =>{
         setIcon(QrCode)
         setText('Start Bot');
         setEnable(false);

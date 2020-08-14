@@ -1,6 +1,9 @@
 import React,{useState} from 'react';
 import TitleBar from 'frameless-titlebar'
 import {useHistory} from 'react-router-dom'
+import Modal from 'react-modal';
+
+import styleModal from '../../ModalStyle';
 
 import './styles.css';
 
@@ -10,6 +13,7 @@ function AppBar() {
   const history = useHistory();
 
   const [clicked,setClicked] = useState(true);
+  const [isOpen,setOpen] = useState(false);
 
   ipcRenderer.on('lock', (event,data) =>{
     setClicked(false)
@@ -35,7 +39,7 @@ function AppBar() {
                     if(clicked){
                       history.push('/')
                     }else{
-                      alert('Deslige o Bot para ter acesso as opções')
+                      setOpen(true);
                     }
                   }
                 },
@@ -45,13 +49,21 @@ function AppBar() {
                     if(clicked){
                       history.push('/menu')
                     }else{
-                      alert('Deslige o Bot para ter acesso as opções')
+                      setOpen(true);
                     }
                   }
                 }
               ]
             }
           ]}/>
+          
+          <Modal style={styleModal(100)} isOpen={isOpen}>
+            <div className="Notification">
+              <h3>Deslige o Bot para ter acesso as opções</h3>
+              <button onClick={() => setOpen(false)}>Fechar</button>
+            </div>
+          </Modal>
+    
     </div>
   );
 }

@@ -18,6 +18,7 @@ module.exports = function(user,msg){
             getUser()[user].stage = 5
             return [
                 showAdrress(),
+                '_Obs: Se seu endereço não estiver na lista infelizmente não poderemos fazer a entrega, nesse caso, por favor cancele o pedido_',
                 'Envie o número da sua localidade :'
             ]
         case '*':
