@@ -7,7 +7,7 @@ import styleModal from '../../ModalStyle';
 import './styles.css';
 
 const fs = window.require('fs');
-const {ipcRenderer} = window.require('electron')
+const {ipcRenderer} = window.require('electron');
 
 let edit = false;
 let id;
@@ -106,8 +106,8 @@ function MenuAdds() {
                         placeholder="Valor do Adicional"
                     />
                     <div className="DialogButtons">
-                        <button type="submit">Cadastrar</button>
                         <button onClick={() => clearInputs(false)}>Cancelar</button>
+                        <button type="submit">Cadastrar</button>
                     </div>
                 </form>
               </div>

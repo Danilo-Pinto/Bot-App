@@ -136,8 +136,8 @@ function MenuStreat() {
               onChange={e => setPrice(e.target.value)}
             />
             <div className="DialogButtons">
-              <button type="submit">Cadastrar</button>
               <button onClick={() => clearInputs(false)}>Cancelar</button>
+              <button type="submit">Cadastrar</button>
             </div>
 
           </form>

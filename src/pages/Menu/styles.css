@@ -29,3 +29,21 @@
 .ButtonsMenu button:active{
     filter: brightness(50%);
 }
+.Dialog button{
+    border-radius: 5px;
+    margin-right: 10px;
+    float: right;
+}
+.CheckItem{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.CheckItem input{
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+}
+.CheckItem label{
+    margin-right: 20px;
+}

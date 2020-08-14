@@ -119,8 +119,8 @@ function MenuItem() {
               placeholder="Descrição"
             />
             <div className="DialogButtons">
-              <button type="submit">Cadastrar</button>
               <button onClick={() => clearInputs(false)}>Cancelar</button>
+              <button type="submit">Cadastrar</button>
             </div>
           </form>
         </div>

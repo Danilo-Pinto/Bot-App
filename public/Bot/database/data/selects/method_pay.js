@@ -1,13 +1,14 @@
-const method_pay = [
-    {
-        id:1,
-        title: "Cartão de Crédito 💳",
-    },
-    {
-        id:2,
-        title: "Dinheiro 💵",
-    },
-]
+const fs = require('fs');
+const {ipcMain} = require('electron');
+
+require('../../../utils/readFile')('pay.json',true);
+
+let method_pay = JSON.parse(fs.readFileSync('pay.json'));
+
+ipcMain.on('EditPay',(event,data) =>{
+    method_pay = data;
+})
+
 module.exports = {
     getMethodPay(){
         let pay = '_Método de pagamento_\n\n';
