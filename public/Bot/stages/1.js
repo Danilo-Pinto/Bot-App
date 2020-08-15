@@ -21,7 +21,8 @@ module.exports = function(user,msg){
                 ]
             case '*':
                 cancel(user,1);
-                getUser()[user].stage = 0
+                getUser()[user].stage = 0;
+                getUser()[user].valAdds = false;
                 return ['🚫 Pedido cancelado com sucesso']
             default:
                 return ['😅 Não entedi, por favor repita !']
